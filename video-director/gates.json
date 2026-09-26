@@ -1,0 +1,74 @@
+{
+  "_about": "Audit gates read by scripts/audit_video.py. This file is the single source of truth for every number the audit enforces; the rules files refer to gates by name. level: fail = fix before sharing, warn = look and decide.",
+  "integrated_lufs": {
+    "min": -15.0,
+    "max": -13.0,
+    "level": "fail",
+    "why": "Web and YouTube playback sits around -14 LUFS. YouTube turns loud uploads down but never turns quiet ones up (a reviewed cut sat at -20)."
+  },
+  "true_peak_dbtp": {
+    "max": -1.0,
+    "level": "fail",
+    "why": "Headroom for the platform's lossy re-encode; stops inter-sample clipping."
+  },
+  "clipped_samples": {
+    "max": 0,
+    "level": "fail",
+    "why": "Any clipped sample is audible distortion."
+  },
+  "loudest_moment_lu": {
+    "max": 8.0,
+    "level": "warn",
+    "why": "The loudest 400 ms moment above the film's average loudness. A logo 'boom' rejected in review sat ~10 dB over the rest; accepted mixes peak at +5 to +6 LU. Keep sound effects within a few dB of the bed."
+  },
+  "stereo_width": {
+    "min": 0.12,
+    "level": "warn",
+    "why": "Side/mid RMS. Produced music is stereo (a catalog piano bed measured 0.30); the MusicGen-small bed measured 0.04, which sounds small and cheap."
+  },
+  "air_db": {
+    "min": -36.0,
+    "level": "warn",
+    "why": "Share of energy at 8-16 kHz. Below this the music sounds dull and closed-in (catalog piano -31 dB; MusicGen-small bed -41 dB). Run the audit on the music file alone, since clicks and whooshes in a full mix hide it."
+  },
+  "video_mbps_1080p": {
+    "min": 8.0,
+    "level": "fail",
+    "why": "YouTube's recommended upload bitrate for 1080p SDR at 24-30 fps (support.google.com/youtube/answer/1722171). A reviewed cut was 0.46 Mbps."
+  },
+  "video_mbps_2160p": {
+    "min": 35.0,
+    "level": "fail",
+    "why": "YouTube's recommended upload bitrate for 4K SDR at 24-30 fps."
+  },
+  "sparse_share": {
+    "max": 0.15,
+    "level": "fail",
+    "why": "Share of frames showing only text or a logo on an empty stage, or nothing. Above ~15% a product video reads as a slide deck (a reviewed cut: 0.54)."
+  },
+  "first_rich_s": {
+    "max": 3.0,
+    "level": "warn",
+    "why": "The product, or the problem in the product, should be on screen within 3 s; the opening seconds decide who keeps watching (a reviewed cut: 10.6 s)."
+  },
+  "longest_still_s": {
+    "max": 5.0,
+    "level": "warn",
+    "why": "Nothing moving for more than ~5 s feels stalled. The final end-card hold may exceed it; anything mid-film should not."
+  },
+  "length_off": {
+    "max": 0.1,
+    "level": "warn",
+    "why": "Land within 10% of the brief's length. Retime by editing shots and holds, never by speeding up the whole film."
+  },
+  "_manual_checks": [
+    "One story: one customer or order, one problem, one cause, one fix, and the proof shown in the same view as the problem.",
+    "phone.png: every word and number the story depends on can be read at phone size.",
+    "No text, title or breadcrumb is sliced by a crop edge; product shots are at most ~25% empty.",
+    "The cursor is visible in every shot where it acts, and every click reads (click ring or a UI reaction).",
+    "Look and copy match the brand profile, and the end card has the URL plus one call to action, held at least 2 s.",
+    "The music fits the mood, sits under the picture, starts and ends cleanly, and has no time-stretch warble.",
+    "No global speed change was applied after rendering.",
+    "Every scene holds up next to its matching moment in the quality-bar reference (rules/quality-bar.md)."
+  ]
+}
