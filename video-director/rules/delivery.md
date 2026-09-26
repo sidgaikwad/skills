@@ -2,8 +2,9 @@
 
 ## Render
 
-- Deliver 4K by default: `npx hyperframes render --resolution landscape-4k --quality delivery --video-bitrate 45M`. Use a 1080p master (`--video-bitrate 12M`) only when asked.
-- Set the bitrate explicitly. Static UI encodes to a small file at CRF settings, and the explicit bitrate gives the platform's re-encode a clean source. The gates are at least 35 Mbps at 4K and 8 Mbps at 1080p, YouTube's upload recommendation. One 4K render measured 24 Mbps without the flag.
+- Deliver 4K by default: `npx hyperframes render --resolution landscape-4k --quality delivery --crf 8`, which is near-lossless. Use a 1080p master (same flags without `--resolution`) only when asked.
+- Control quality with CRF, not a bitrate target. Mostly-static UI compresses tiny even near-lossless: a CRF 8 4K product film measured 8.9 Mbps, and `--video-bitrate 45M` still averaged only 17.7 Mbps. The bitrate gates are warnings; the real check is 100% crops of the master.
+- **4K sharpness has a zoom budget.** A 4K recording (2 px per CSS px) stays pixel-sharp in a 4K master only up to ~1.33× zoom inside a 1440-wide window (2880 px at 4K). Deeper punch-ins are upscaled: fine at 1080p viewing, soft at 100% on a 4K screen. For deep punch-ins at 4K, record the take at deviceScaleFactor 3–4, or accept 1080p-equivalent sharpness in those shots. Screencast frames recorded as JPEG show their 8×8 blocks once upscaled past ~2×.
 - YouTube serves 4K uploads with better codecs, which also improves what 1080p viewers see (widely reported, not official).
 - The frame rate matches the capture rate: 30 fps for screen recordings.
 

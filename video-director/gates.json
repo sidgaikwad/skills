@@ -33,13 +33,13 @@
   },
   "video_mbps_1080p": {
     "min": 8.0,
-    "level": "fail",
-    "why": "YouTube's recommended upload bitrate for 1080p SDR at 24-30 fps (support.google.com/youtube/answer/1722171). A reviewed cut was 0.46 Mbps."
+    "level": "warn",
+    "why": "YouTube's recommended upload bitrate for 1080p SDR at 24-30 fps (support.google.com/youtube/answer/1722171). A proxy only: mostly-static UI encodes far below it even near-lossless (a CRF 8 4K product film measured 8.9 Mbps). Render the master at --crf 8 and judge 100% crops; a lossy low-CRF-quality encode (a reviewed cut: 0.46 Mbps at default CRF) is the real failure."
   },
   "video_mbps_2160p": {
     "min": 35.0,
-    "level": "fail",
-    "why": "YouTube's recommended upload bitrate for 4K SDR at 24-30 fps."
+    "level": "warn",
+    "why": "YouTube's recommended upload bitrate for 4K SDR at 24-30 fps. A proxy only: static UI legitimately encodes lower at near-lossless CRF (8.9 Mbps at CRF 8). Render at --crf 8 and check 100% crops instead of padding bitrate."
   },
   "sparse_share": {
     "max": 0.15,
