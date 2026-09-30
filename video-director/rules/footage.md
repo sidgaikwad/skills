@@ -10,8 +10,7 @@
 
 - **Show the whole screen.** Every product shot is the full recording, scaled down into a rounded frame that fills about 90% of the picture. Never a static crop of a recording: a cropped screen loses the context that tells the viewer which screen they are on, and reads as a mock-up. (A client rejected cropped UI fragments outright.)
 - Whatever the viewer must read gets a camera push, not a crop: a gentle, temporary push (≤ 1.4×) that starts from the full screen and returns to it, so the context is never lost. A whole-app view puts UI text at about 8–11 px at 1080p; deliver 4K so it stays crisp, and carry the key numbers in captions and labels.
-- No more than about 25% of a product shot is empty; tighten the crop or move the window. One reviewed drag-and-drop shot was about 60% empty.
-- Crop edges fall in the gaps between elements, so every title, breadcrumb, label and number is either whole or fully out of frame.
+- When a push is used, its framing lands so every title, breadcrumb, label and number is either whole or fully out of frame; edges fall in the gaps between elements.
 - Keep one product-window treatment for the whole film: same size, radius, hairline and shadow. The brand profile records it.
 
 ## Move
