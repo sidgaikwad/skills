@@ -18,14 +18,14 @@ A buyer retells a story, not a feature list.
 
 | Beat | Seconds | What happens |
 |---|---|---|
-| Hook | 0–3 | The problem, visible in the product (or the finished title frame, with the product on screen by ~2 s) |
+| Hook | 0–4 | The problem as an animation: the title docks, a drawn failure (a bar crossing its due date), a typed headline; then the app |
 | Stakes | 3–10 | One line: who is affected and what it costs |
 | Cause | 10–20 | The product shows why |
 | Fix | 20–40 | The action, continuous, in the product |
 | Proof | 40–50 | The same view, now fixed, with a label |
 | Payoff and brand | 50–60 | One line of value, lockup, URL, call to action |
 
-Scale the beats in proportion for other lengths. The hook stays at 3 s or less at every length.
+Scale the beats in proportion for other lengths. The hook stays at 5 s or less at every length (see below).
 
 ## The hook (first 3–5 s)
 
