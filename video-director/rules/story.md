@@ -27,6 +27,10 @@ A buyer retells a story, not a feature list.
 
 Scale the beats in proportion for other lengths. The hook stays at 3 s or less at every length.
 
+## The hook (first 3–5 s)
+
+Open on the finished title (frame 0 doubles as the thumbnail), dock it out of the way, and state the problem as an animation before the app appears: an illustration that draws itself, a typed headline, one visible failure (a bar crossing its due date and turning red). Then cut to the app, on the music's first downbeat when possible.
+
 ## Length and pace
 
 - Target lengths:
@@ -35,6 +39,7 @@ Scale the beats in proportion for other lengths. The hook stays at 3 s or less a
   - feed cut: 15–30 s
 - Set timing in the edit: shorten holds and cut beats that don't serve the spine. A playback-speed change after rendering (one reviewed cut got a 1.25× pass) speeds up every ease, every cursor move and the music along with it. That cut still ran 25% over its target.
 - Every shot earns its place. If removing a shot leaves the story intact, remove it.
+- Every beat moves. The only still moments are reading holds sized to the words (about words ÷ 3.5 + 0.5 s). An app scene runs ~5–7 s with three or four events inside it (move, click, camera, annotation). Cut idle stretches of a recording with invisible jump cuts, and speed slow recorded actions (a drag) to 1.5–2× rather than speeding up the film.
 - Frame 0 is a finished title or the product, so the first frame and the thumbnail always show something.
 
 ## Copy

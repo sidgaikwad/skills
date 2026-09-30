@@ -10,6 +10,17 @@ Sources: a frame-by-frame breakdown of a Zelios-style SaaS explainer and the hou
 - Timing is set in the edit (holds and cuts) and rendered at 1× speed.
 - **Crisp type at rest.** Every letter is crystal clear on a big screen the moment it settles. Blur on an entrance clears within 0.4 s, even when the move itself runs longer, so run blur as its own short tween. A glow is a blurred duplicate behind a sharp, full-opacity text layer. *Why:* 1 s blur-in ramps plus a heavy glow made big type read as soft in review.
 
+## Hand-made, not generated
+
+Viewers spot generated motion instantly: everything on one ease, text streaming in word by word, strokes popping in, straight-line cursors, template decoration. What reads as crafted:
+
+- **Camera:** a critically damped spring on (centre x, centre y, log zoom) at about 1 Hz, sampled per frame. It eases in and settles like an operator, with no overshoot. Start annotations ~0.9 s after a new camera target, once it has settled.
+- **Cursor:** a slight arc (bow ≈ 5% of the distance, ≤ 30 px), a minimum-jerk speed profile (10u³ − 15u⁴ + 6u⁵), and a ~1% overshoot that settles back on long moves. Duration ≈ 0.30 + 0.0004 × distance, clamped to 0.4–0.92 s, arriving exactly at the recorded click. Drags follow the recorded path, because the dragged item is attached to it.
+- **Annotations:** a hand-drawn loop (a superellipse with a gentle wobble, drawn ~7% past its start and lifting away) and a pen-like arrow (a curved body, then a quick V head), drawn with `power2.inOut`. One loop per step. Red for the problem, green for the fix.
+- **Text:** mask line reveals (each line slides up inside its own mask, `expo.out`, 0.07 s apart), never word-by-word streaming, which reads as a chatbot. Typing only for a hook headline, with an uneven typist's rhythm (longer after spaces and punctuation). A highlighter swipe on the payoff words.
+- **Leave out:** dot-grid backgrounds, light sweeps, 3D-tilted floating chips, connector lines to nowhere, countdown numbers and pop-ins on everything.
+- **Technical:** draw strokes with `pathLength="1000"`, `stroke-dasharray: 1000 1000` and a dash offset tween from 1000 to 0. Keep the stroke at opacity 0 until its draw starts, because round caps otherwise show dots. `pathLength="1"` pops instead of drawing in Chrome. Set every reveal's hidden start state at t = 0 (`immediateRender: false` leaves it visible until its tween starts), and keep a frame's content playing under the frame's own fade-out.
+
 ## Eases
 
 | Name | Value | Use |

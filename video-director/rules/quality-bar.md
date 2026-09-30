@@ -1,6 +1,19 @@
 # Quality bar
 
-The bar for every video we ship is **"AI App Builder Product Demo Video Example | Lovio"** by Zelios (Animated Video Production): 54 s, 1080p30, https://www.youtube.com/watch?v=_PLSHdVR4no. Our house motion comes from a tutorial that recreated its opening (breakdown: `motion-library/reference/zelios-saas-explainer-breakdown.md`).
+The bar is a set of six product videos (2026) from Claude, Linear and OpenAI:
+
+- https://x.com/claudeai/status/2100632677904744716 (Projects, 83 s)
+- https://x.com/claudeai/status/2013754136265621952 (health integrations, 72 s)
+- https://x.com/OpenAI/status/2047008987665809771 (workspace agents, 70 s)
+- https://x.com/OpenAIDevs/status/2039482146369458526 (Linear plugin in Codex, 24 s)
+- https://x.com/linear/status/2013643099147248054 (Reviews, 25 s)
+- https://x.com/linear/status/2049897250449391850 (Releases, 30 s)
+
+They come in two families:
+- **Product storytelling on a flat stage** (Claude and OpenAI): typed headlines, the product shown whole or in large pieces, lists that build and tick, hard cuts or gentle dissolves, median shot 3.5–3.9 s, nothing still for more than 4 s.
+- **Dark 3D trailers** (Linear): borrow only their slow mono titles typed with a block caret.
+
+The Zelios-style SaaS explainer remains a source for motion recipes (`rules/motion.md`), not the bar.
 
 ## The rule
 

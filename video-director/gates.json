@@ -42,9 +42,9 @@
     "why": "YouTube's recommended upload bitrate for 4K SDR at 24-30 fps. A proxy only: static UI legitimately encodes lower at near-lossless CRF (8.9 Mbps at CRF 8). Render at --crf 8 and check 100% crops instead of padding bitrate."
   },
   "sparse_share": {
-    "max": 0.15,
+    "max": 0.2,
     "level": "fail",
-    "why": "Share of frames showing only text or a logo on an empty stage, or nothing. Above ~15% a product video reads as a slide deck (a reviewed cut: 0.54)."
+    "why": "Share of frames showing only text or a logo on an empty stage, or nothing. A slide-deck film measured 0.54; a ~40 s film with a designed 4 s hook and a 6 s end card measures ~0.18. Above 0.2, the product isn't carrying the film."
   },
   "first_rich_s": {
     "max": 3.0,
